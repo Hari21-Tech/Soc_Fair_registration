@@ -28,3 +28,8 @@ async def submit_form(
     doc = {"name": name, "roll": roll, "email": email}
     await collection.insert_one(doc)
     return {"message": "Form submitted successfully"}
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
